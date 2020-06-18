@@ -1,16 +1,16 @@
 module Stone::Siclos
   module Client
 
-    autoload :Token, 'siclos/client/token'
-    autoload :Establishment, 'siclos/client/establishment'
-    autoload :Recipient, 'siclos/client/recipient'
-    autoload :Pos, 'siclos/client/pos'
-    autoload :PreTransaction, 'siclos/client/pre_transaction'
-    autoload :Transaction, 'siclos/client/transaction'
-    autoload :Finance, 'siclos/client/finance'
-    autoload :Danfe, 'siclos/client/danfe'
-    autoload :ClaimCheck, 'siclos/client/claim_check'
-    autoload :Webhook, 'siclos/client/webhook'
+    autoload :Token, 'stone/siclos/client/token'
+    autoload :Establishment, 'stone/siclos/client/establishment'
+    autoload :Recipient, 'stone/siclos/client/recipient'
+    autoload :Pos, 'stone/siclos/client/pos'
+    autoload :PreTransaction, 'stone/siclos/client/pre_transaction'
+    autoload :Transaction, 'stone/siclos/client/transaction'
+    autoload :Finance, 'stone/siclos/client/finance'
+    autoload :Danfe, 'stone/siclos/client/danfe'
+    autoload :ClaimCheck, 'stone/siclos/client/claim_check'
+    autoload :Webhook, 'stone/siclos/client/webhook'
 
     class Response
       def initialize(code, data)
