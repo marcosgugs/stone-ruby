@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    stone (0.0.1)
+    stone-ruby (0.0.1)
       dry-configurable (~> 0.8.3)
       typhoeus (~> 1.0.2)
 
@@ -42,7 +42,7 @@ DEPENDENCIES
   bundler (~> 1.17)
   rake (~> 10.0)
   rspec (~> 3.0)
-  stone!
+  stone-ruby!
 
 BUNDLED WITH
    1.17.3
