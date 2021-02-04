@@ -38,6 +38,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'dry-configurable', '~> 0.8.3'
   spec.add_dependency 'typhoeus', '~> 1.0.2'
+  spec.add_dependency 'request_store_rails', '~> 2.0.0'
 
   spec.add_development_dependency 'bundler', '~> 1.17'
   spec.add_development_dependency 'rake', '~> 10.0'

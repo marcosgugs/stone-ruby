@@ -1,6 +1,8 @@
 module Stone::Siclos
   module Client
 
+    TOKEN_KEY = :siclos_token
+
     autoload :Token, 'stone/siclos/client/token'
     autoload :Establishment, 'stone/siclos/client/establishment'
     autoload :Recipient, 'stone/siclos/client/recipient'
@@ -15,7 +17,6 @@ module Stone::Siclos
     class Response
       def initialize(code, data)
         @code = code
-        ap data
         @data = JSON.parse(data, symbolize_names: true)
         raise_exception unless @data[:success]
       end
@@ -36,8 +37,8 @@ module Stone::Siclos
 
     class Base
 
-      def initialize
-        @token = Stone.config.siclos.api_key
+      def initialize(_token = Stone.config.siclos.api_key)
+        @token = RequestLocals.store[TOKEN_KEY] || _token
       end
 
       def parse_endpoint(path)
@@ -104,19 +105,24 @@ module Stone::Siclos
       end
 
       def with_token
-        cached_token = Stone.config.siclos.api_key
+        clear_token
         authentication_token = token.token
 
         if authentication_token.success?
-          Stone.config.siclos.api_key = authentication_token.data[:token]
+          RequestLocals.store[TOKEN_KEY] = authentication_token.data[:token]
           result = yield(self)
-          Stone.config.siclos.api_key = cached_token
           result
         else
           raise Stone::Siclos::Error::TokenError, authentication_token.data[:msg]
         end
       ensure
-        Stone.config.siclos.api_key = cached_token
+        clear_token
+      end
+
+      private
+
+      def clear_token
+        RequestLocals.store[TOKEN_KEY] = nil
       end
     end
   end
