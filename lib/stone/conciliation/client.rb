@@ -1,7 +1,7 @@
+# frozen_string_literal: true
+
 module Stone::Siclos
   module Client
-
-
     class Response
       def initialize(code, data)
         @code = code
@@ -17,6 +17,7 @@ module Stone::Siclos
       end
 
       private
+
       def raise_exception
         return unless Stone.config.siclos.use_exception
 
@@ -25,7 +26,6 @@ module Stone::Siclos
     end
 
     class Base
-
       def initialize
         @token = Stone.config.siclos.api_key
       end
@@ -44,8 +44,8 @@ module Stone::Siclos
           body: data ? data.to_json : nil,
           params: params,
           headers: {
-            :'Content-Type'=> 'application/json',
-            :Authorization => "Bearer #{@token}"
+            'Content-Type': 'application/json',
+            Authorization: "Bearer #{@token}"
           }
         ).run
         Response.new(response.response_code, response.response_body)
@@ -53,7 +53,6 @@ module Stone::Siclos
     end
 
     class << self
-
     end
   end
 end

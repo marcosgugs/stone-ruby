@@ -1,13 +1,14 @@
+# frozen_string_literal: true
+
 module Stone::Siclos
   module Client
     class Recipient < Base
-
-      def create data
-        request(:post, "/recipient/create", data)
+      def create(data)
+        request(:post, '/recipient/create', data)
       end
 
-      def create_existing_stone data
-        request(:post, "/recipient/create-existing-stone", data)
+      def create_existing_stone(data)
+        request(:post, '/recipient/create-existing-stone', data)
       end
 
       def deactivate_recipient(recipient_id)
@@ -15,7 +16,7 @@ module Stone::Siclos
       end
 
       def reactivate_recipient(data)
-        request(:put, "/recipient/reactivate-recipient/", data)
+        request(:put, '/recipient/reactivate-recipient/', data)
       end
 
       def get_all_establishment_recipients
@@ -25,7 +26,6 @@ module Stone::Siclos
       def get_single(recipient_id)
         request(:get, "/recipient/get-single/#{recipient_id}")
       end
-
     end
   end
 end

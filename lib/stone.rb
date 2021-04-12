@@ -1,10 +1,16 @@
+# frozen_string_literal: true
+
 require 'dry-configurable'
+require 'dry-struct'
 require 'typhoeus'
 require 'stone/version'
+require 'stone/types'
+require 'active_support'
 
 module Stone
   extend Dry::Configurable
 
+  autoload :Types, 'stone/types'
   autoload :Siclos, 'stone/siclos'
   autoload :Conciliation, 'stone/conciliation'
 
@@ -24,7 +30,6 @@ module Stone
   end
 
   def self.configure
-    yield self.config
+    yield config
   end
-
 end
