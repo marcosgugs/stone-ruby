@@ -58,7 +58,7 @@ GEM
       ast (~> 2.4.1)
     rainbow (2.2.2)
       rake
-    rake (10.5.0)
+    rake (13.0.3)
     request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
     rexml (3.2.4)
@@ -96,7 +96,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.17)
-  rake (~> 10.0)
+  rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (= 0.80.1)
   stone-ruby!
