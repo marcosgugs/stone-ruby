@@ -24,8 +24,8 @@ module Stone
 
   setting :conciliation do
     setting :app_key, ENV.fetch('STONE_CONCILIATION_APP_KEY', nil)
-    setting :app_secret, ENV.fetch('STONE_CONCILIATION_APP_SECRET', nil)
-    setting :auth_endpoint, ENV.fetch('STONE_CONCILIATION_AUTH_ENDPOINT', 'https://conciliation.stone.com.br/v1/merchant/{{stone_code}}/access-authorization')
+    setting :app_secret, ENV.fetch('STONE_CONCILIATION_APP_SECRET_KEY', nil)
+    setting :auth_endpoint, ENV.fetch('STONE_CONCILIATION_AUTH_ENDPOINT', 'https://conciliation.stone.com.br/v1/merchant/{StoneCode}/access-authorization')
     setting :file_endpoint, ENV.fetch('STONE_CONCILIATION_FILE_ENDPOINT', 'https://conciliation.stone.com.br/conciliation-file/v2.2/{{referenceDate}}')
   end
 

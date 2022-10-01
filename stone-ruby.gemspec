@@ -39,7 +39,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'dry-configurable', '~> 0.8.3'
   spec.add_dependency 'dry-struct', '~> 0.7'
-  spec.add_dependency 'request_store_rails', '~> 2.0.0'
   spec.add_dependency 'typhoeus', '~> 1.0.2'
   spec.add_dependency 'activesupport', '~> 4.2'
 

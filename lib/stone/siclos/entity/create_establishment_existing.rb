@@ -10,7 +10,7 @@ module Stone
         attribute :document_number, Types::Coercible::String
         attribute :stone_code, Types::Coercible::String
         attribute :cards_rate, Types::Coercible::Array.of(CardRate).optional.default(nil)
-        attribute :address, Address
+        attribute :address, Address.optional.default(nil)
       end
     end
   end
