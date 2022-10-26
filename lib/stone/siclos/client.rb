@@ -68,7 +68,8 @@ module Stone::Siclos
           method: method,
           body: data ? remove_blank_values(data).to_json : nil,
           params: params,
-          headers: { 'Content-Type': 'application/json', Authorization: "Bearer #{@token}" }
+          headers: { 'Content-Type': 'application/json', Authorization: "Bearer #{@token}" },
+          ssl_verifypeer: false
         ).run
         Response.new(response.response_code, response.response_body)
       end
