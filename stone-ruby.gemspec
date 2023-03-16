@@ -40,7 +40,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'dry-configurable', '~> 0.8.3'
   spec.add_dependency 'dry-struct', '~> 0.7'
   spec.add_dependency 'typhoeus', '~> 1.0.2'
-  spec.add_dependency 'activesupport', '~> 4.2'
+  spec.add_dependency 'activesupport', '>= 4.2', '< 8.0'
 
   spec.add_development_dependency 'bundler', '~> 1.17'
   spec.add_development_dependency 'rake', '~> 10.0'
